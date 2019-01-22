@@ -1,9 +1,5 @@
 import time
 
-def getDigits():
-    user_input = input('Input 4 numbers : ')
-    return user_input.split(' ')
-
 def generatePerm(L):
     if len(L)==0:
         return set()
@@ -39,12 +35,13 @@ def makeExp(perm_digit,ops,variation):
     else:
         result=perm_digit[0]+ops[0]+'('+perm_digit[1]+ops[1]+'('+perm_digit[2]+ops[2]+perm_digit[3]+'))'
     return result
-        
+
 if __name__=='__main__':
-    digits=getDigits()
+    user_input = input('Input 4 numbers : ')
+    digits=user_input.split(' ')
+    start=time.time()
     solutions=[]
     epsilon=1e-12
-    start=time.time()
     for perm_digit in generatePerm(digits):
         for ops in generateOps():
             for i in range(1,6):
