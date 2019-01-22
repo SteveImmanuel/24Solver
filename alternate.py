@@ -53,6 +53,7 @@ if __name__=='__main__':
                 if abs(result-24)<=epsilon:
                     solutions.append(exp_txt)               
     end=time.time()
+    solutions=sorted(solutions)
     for solution in solutions:
         print(solution)
     print('Found',len(solutions),'solution(s).')
